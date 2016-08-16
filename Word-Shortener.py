@@ -2,6 +2,7 @@ from __future__ import division
 from collections import OrderedDict
 import re
 import nltk
+import sys
 
 #Test Strings
 text="Learn the basics of web design"
@@ -16,7 +17,6 @@ def put_in_a_list(sentence):
 	replace('o','').replace('u','') if (w[0] not in ['a','e','i','o','u'])\
 	else w[:1]+w[1:].replace('e', '').replace('a','').replace('i','').\
 	replace('o','').replace('u','') for w in words]
-
 	return words
 
 #Removing repeated Consonants
@@ -35,7 +35,10 @@ def words_compressed_stat(text2):
 	orginal_str=text2
 	result_str = remove_rep_consonants(put_in_a_list(text2))
 	num = 1-(len(result_str)/len(orginal_str))
+	#print len(result_str),len(orginal_str)
 	print "Compressed the text by", int(num*100) ,"percent"
 
-print remove_rep_consonants(put_in_a_list(text2))
-words_compressed_stat(text2)
+#print remove_rep_consonants(put_in_a_list(text2))
+#words_compressed_stat(text2)
+print remove_rep_consonants(put_in_a_list(sys.argv[1]))
+words_compressed_stat(sys.argv[1])
