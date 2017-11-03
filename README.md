@@ -1,9 +1,9 @@
-#Tweet Short
+# Tweet Short
 =============
 
 This project gets any text data as the input and outputs a meaningful shortened version word by word phonetically.
 
-###Sample Usage:
+### Sample Usage:
 
 ```
 $python Word-Shortener.py "Two roads diverged in a yellow wood"
